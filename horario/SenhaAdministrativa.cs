@@ -9,7 +9,7 @@ namespace horario
     {
         string caminho = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)
             .Parent.Parent.FullName + "\\privado";
-
+        public string senha;
 
         public bool verificacao;
 
@@ -40,19 +40,32 @@ namespace horario
             bl.DesBloquearPasta(caminho);
 
             string[] lines = File.ReadAllLines(caminho + "\\pass.txt");
+            Criptografia cripto = new Criptografia(CryptProvider.RC2);
+            cripto.Key = txt_senha.Text;
 
-            if (txt_senha.Text == lines[0])
+            try
             {
-                verificacao = true;
-                bl.BloquearPasta(caminho);
-                this.Close();
+                if (cripto.Encrypt(txt_senha.Text) == lines[0])
+                {
+                    senha = txt_senha.Text;
+                    verificacao = true;
+                    bl.BloquearPasta(caminho);
+                    this.Close();
+                }
+                else
+                {
+                    bl.BloquearPasta(caminho);
+                    verificacao = false;
+                    label2.Visible = true;
+                }
             }
-            else
+            catch (Exception)
             {
                 bl.BloquearPasta(caminho);
                 verificacao = false;
                 label2.Visible = true;
             }
+            
         }
 
         private void SenhaAdministrativa_KeyDown(object sender, KeyEventArgs e)

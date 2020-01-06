@@ -18,9 +18,12 @@ namespace horario
           .Parent.Parent.FullName + "\\privado";
         block bl = new block();
 
-        public senhas()
+        string pass;
+
+        public senhas(string password)
         {
             InitializeComponent();
+            pass = password;
         }
 
         private void senhas_Load(object sender, EventArgs e)
@@ -113,10 +116,10 @@ namespace horario
         {
             string senha = null;
             string descricao = null;
-            Criptografar cripto = new Criptografar();
+            Criptografia cripto = new Criptografia(CryptProvider.RC2);
+            cripto.Key = pass;
+            senha = cripto.Encrypt(txt_senha.Text);
 
-
-            senha = txt_senha.Text;
             descricao = rtb_descricao.Text;
 
             bl.DesBloquearPasta(caminho);
@@ -156,7 +159,7 @@ namespace horario
 
         private void VisualizaSenha(string chave)
         {
-            Criptografar cripto = new Criptografar();
+           // Criptografar cripto = new Criptografar();
             bl.DesBloquearPasta(caminho);
             if (!File.Exists(caminho + "\\arquivos.txt"))
             {
@@ -170,8 +173,11 @@ namespace horario
             {
                 if (line.Substring(0, 50) == chave.PadRight(50, ' '))
                 {
+                    Criptografia cripto = new Criptografia(CryptProvider.RC2);
+                    cripto.Key = pass;
+
                     txt_chave.Text = line.Substring(0, 50).Trim();
-                    txt_senha.Text = line.Substring(50, 70).Trim();
+                    txt_senha.Text = cripto.Decrypt(line.Substring(50, 70).Trim());
                     rtb_descricao.Text = line.Substring(120, 220).Trim();
                 }
             }

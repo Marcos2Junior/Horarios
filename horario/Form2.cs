@@ -77,8 +77,10 @@ namespace horario
                 }
 
                 StreamWriter writer = new StreamWriter(caminho + "\\pass.txt");
+                Criptografia cripto = new Criptografia(CryptProvider.RC2);
+                cripto.Key = txt_senha.Text;
 
-                writer.Write(txt_senha.Text);
+                writer.Write(cripto.Encrypt(txt_senha.Text));
                 writer.Close();
 
 

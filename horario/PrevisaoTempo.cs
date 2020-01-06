@@ -8,7 +8,7 @@ namespace horario
     {
         public WeatherInfo.RootObject getWeather(string city_name)
         {
-            string key = "Inserir sua key"; 
+            string key = "Sua key"; 
             string url = string.Format("https://api.hgbrasil.com/weather?key={0}&city_name={1}&format=json", key, city_name);
             WebClient web = new WebClient();
             var json = web.DownloadString(url);

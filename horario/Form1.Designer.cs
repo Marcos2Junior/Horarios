@@ -187,11 +187,12 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 100);
+            this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 163);
             this.panel1.TabIndex = 12;
@@ -199,7 +200,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(198, 127);
+            this.button3.Location = new System.Drawing.Point(117, 127);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -218,7 +219,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(132, 87);
+            this.button2.Location = new System.Drawing.Point(198, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -370,6 +371,7 @@
             // panel_cidade
             // 
             this.panel_cidade.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_cidade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_cidade.Controls.Add(this.label11);
             this.panel_cidade.Controls.Add(this.txt_nome);
             this.panel_cidade.Controls.Add(this.label10);
@@ -452,13 +454,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 323);
-            this.Controls.Add(this.btn_alterar_dados);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_cidade);
+            this.Controls.Add(this.btn_alterar_dados);
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_reset);

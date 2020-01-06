@@ -57,6 +57,7 @@ namespace horario
                 panel2.Visible = true;
                 numericUpDown1.Value = DateTime.Now.Month;
                 numericUpDown2.Value = DateTime.Now.Year;
+
             }
             else if (e.KeyCode == Keys.F2)
             {
@@ -65,7 +66,7 @@ namespace horario
                 frmSenha.ShowDialog();
                 if (frmSenha.verificacao)
                 {
-                    senhas frm = new senhas();
+                    senhas frm = new senhas(frmSenha.senha);
                     frm.ShowDialog();
                 }
 
