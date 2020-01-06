@@ -19,9 +19,14 @@ namespace horario
         TimeSpan adicional;
         bool diaEncerrado;
         string usuario;
+        string cidade;
         string[] linhas;
         string caminho = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)
             .Parent.Parent.FullName + "\\dados.txt";
+        int contador = 10;
+        WeatherInfo.RootObject result;
+        bool inicioForm = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,14 +36,17 @@ namespace horario
 
             Rectangle workingArea = Screen.GetWorkingArea(this);
             this.Location = new Point(workingArea.Right - Size.Width, workingArea.Bottom - Size.Height);
-            
+
+            PrevisaoTempo previsaoTempo = new PrevisaoTempo();
+            result = previsaoTempo.getWeather(cidade);
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                GravaDados(false);
+                GravaDados(false, cidade, usuario);
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -53,9 +61,14 @@ namespace horario
             else if (e.KeyCode == Keys.F2)
             {
                 this.Hide();
-                senhas frm = new senhas();
-                frm.ShowDialog();
-                
+                SenhaAdministrativa frmSenha = new SenhaAdministrativa();
+                frmSenha.ShowDialog();
+                if (frmSenha.verificacao)
+                {
+                    senhas frm = new senhas();
+                    frm.ShowDialog();
+                }
+
             }
             else
             {
@@ -65,6 +78,14 @@ namespace horario
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (inicioForm == true)
+                contador = contador - 4;
+            else
+                contador--;
+
+            if (contador < -700)
+                contador = 300;
+
             exibeText();
             label1.Text = "Horario Saida: " + horaSaida;
             label2.Text = "Voce fez " + almoco + " de almoço";
@@ -74,16 +95,33 @@ namespace horario
 
         private void exibeText()
         {
+            if (inicioForm == false)
+            {
+                lbl_titulo.Location = new Point(0, 36);
+
+                if (contador < -20)
+                {
+                    inicioForm = true;
+                    contador = 0;
+                }
+            }
+            else
+            {
+                lbl_titulo.Location = new Point(contador, 36);
+            }
+
+            string previsao = ", Previsão para hoje é " + result.results.description + ", Temperatura atual: " + result.results.temp.ToString() + "°,  Cidade de " + cidade;
+
             if (DateTime.Now > DateTime.Parse("11:59:00") && DateTime.Now < DateTime.Parse("18:00:00"))
             {
-                this.Text = "Boa tarde " + usuario;
+                lbl_titulo.Text = "Boa tarde " + usuario + previsao;
             }
             else if (DateTime.Now > DateTime.Parse("18:00:00"))
             {
-                this.Text = "Boa noite " + usuario;
+                lbl_titulo.Text = "Boa noite " + usuario + previsao;
             }
             else
-                this.Text = "Bom dia " + usuario;
+                lbl_titulo.Text = "Bom dia " + usuario + previsao;
         }
 
         private void Calculo()
@@ -158,7 +196,8 @@ namespace horario
                 if (line.Contains("---"))
                 {
                     horario = TimeSpan.Parse(line.Substring(3, 8));
-                    usuario = line.Substring(11, line.Length - 11);
+                    usuario = line.Substring(11, 10).Trim();
+                    cidade = line.Substring(21, 20).Trim();
                 }
                 else if (line.Substring(0, 10) == (dateTimePicker1.Value.ToShortDateString()))
                 {
@@ -191,7 +230,7 @@ namespace horario
             }
         }
 
-        private void GravaDados(bool encerraDia)
+        private void GravaDados(bool encerraDia, string city, string user)
         {
             timer1.Start();
             linhas = File.ReadAllLines(caminho);
@@ -199,8 +238,8 @@ namespace horario
             bool x = false;
             if (linhas.Length == 1)
             {
-                gravarTXT.WriteLine("---" + horario + usuario);
-                if(encerraDia)
+                gravarTXT.WriteLine("---" + horario + user + city);
+                if (encerraDia)
                     gravarTXT.WriteLine(dateTimePicker1.Value.ToShortDateString() + horario1 + horario2 + horario3 + horario4 + "sim" + textBox1.Text.PadRight(50, ' '));
                 else
                     gravarTXT.WriteLine(dateTimePicker1.Value.ToShortDateString() + horario1 + horario2 + horario3 + horario4 + "nao");
@@ -215,7 +254,7 @@ namespace horario
                     {
                         if (line.Substring(0, 10) == (dateTimePicker1.Value.ToShortDateString()))
                         {
-                            
+
                             if (encerraDia)
                             {
                                 gravarTXT.WriteLine(valor + "sim" + textBox1.Text.PadRight(50, ' '));
@@ -232,7 +271,7 @@ namespace horario
                     }
                     else
                     {
-                        gravarTXT.WriteLine(line);
+                        gravarTXT.WriteLine("---" + horario + user.PadRight(10, ' ') + city.PadRight(20, ' '));
                     }
                 }
 
@@ -343,7 +382,7 @@ namespace horario
         private void button2_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
-            GravaDados(true);
+            GravaDados(true, cidade, usuario);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -376,6 +415,33 @@ namespace horario
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.BLACK
             );
+        }
+
+        private void btn_gravar_cidade_Click(object sender, EventArgs e)
+        {
+            GravaDados(false, txt_cidade.Text, txt_nome.Text);
+            panel_cidade.Visible = false;
+
+            this.Hide();
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+        }
+
+        private void btn_cancel_cidade_Click(object sender, EventArgs e)
+        {
+            panel_cidade.Visible = false;
+        }
+
+        private void btn_alterar_dados_Click(object sender, EventArgs e)
+        {
+            if (panel_cidade.Visible == true)
+                panel_cidade.Visible = false;
+            else
+            {
+                panel_cidade.Visible = true;
+                txt_cidade.Text = cidade;
+                txt_nome.Text = usuario;
+            }
         }
     }
 }

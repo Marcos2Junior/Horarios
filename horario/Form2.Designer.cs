@@ -35,11 +35,13 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_senha = new System.Windows.Forms.TextBox();
-            this.txt_confsenha = new System.Windows.Forms.TextBox();
-            this.btn_gravar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_gravar = new System.Windows.Forms.Button();
+            this.txt_confsenha = new System.Windows.Forms.TextBox();
+            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +49,10 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(12, 235);
-            this.textBox1.MaxLength = 15;
+            this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(186, 26);
             this.textBox1.TabIndex = 1;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -100,43 +101,25 @@
             this.panel1.Controls.Add(this.txt_confsenha);
             this.panel1.Controls.Add(this.txt_senha);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(3, 68);
+            this.panel1.Location = new System.Drawing.Point(8, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 201);
+            this.panel1.Size = new System.Drawing.Size(285, 265);
             this.panel1.TabIndex = 5;
             this.panel1.Visible = false;
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Informe sua senha";
-            // 
-            // txt_senha
-            // 
-            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senha.Location = new System.Drawing.Point(27, 60);
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.PasswordChar = '*';
-            this.txt_senha.Size = new System.Drawing.Size(198, 26);
-            this.txt_senha.TabIndex = 1;
-            // 
-            // txt_confsenha
-            // 
-            this.txt_confsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_confsenha.Location = new System.Drawing.Point(27, 113);
-            this.txt_confsenha.Name = "txt_confsenha";
-            this.txt_confsenha.PasswordChar = '*';
-            this.txt_confsenha.Size = new System.Drawing.Size(198, 26);
-            this.txt_confsenha.TabIndex = 2;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Confirme sua senha";
             // 
             // btn_gravar
             // 
-            this.btn_gravar.Location = new System.Drawing.Point(150, 150);
+            this.btn_gravar.Location = new System.Drawing.Point(151, 169);
             this.btn_gravar.Name = "btn_gravar";
             this.btn_gravar.Size = new System.Drawing.Size(122, 39);
             this.btn_gravar.TabIndex = 3;
@@ -144,22 +127,62 @@
             this.btn_gravar.UseVisualStyleBackColor = true;
             this.btn_gravar.Click += new System.EventHandler(this.btn_gravar_Click);
             // 
-            // label5
+            // txt_confsenha
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Confirme sua senha";
+            this.txt_confsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_confsenha.Location = new System.Drawing.Point(28, 132);
+            this.txt_confsenha.Name = "txt_confsenha";
+            this.txt_confsenha.PasswordChar = '*';
+            this.txt_confsenha.Size = new System.Drawing.Size(198, 26);
+            this.txt_confsenha.TabIndex = 2;
+            // 
+            // txt_senha
+            // 
+            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senha.Location = new System.Drawing.Point(28, 79);
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.PasswordChar = '*';
+            this.txt_senha.Size = new System.Drawing.Size(198, 26);
+            this.txt_senha.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Informe sua senha";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 274);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 20);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Qual sua cidade?";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(8, 297);
+            this.textBox2.MaxLength = 20;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(186, 26);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 281);
+            this.ClientSize = new System.Drawing.Size(300, 335);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label2);
@@ -189,5 +212,7 @@
         private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

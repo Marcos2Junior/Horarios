@@ -120,6 +120,15 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Apenas use essa opção caso irá sair mais cedo, ou se
+ desejar acrescentar um comentário sobre o dia.
+
+OBS: Alterar o horário após encerrar o dia, irá perder o
+seu comentário.
+
+Comentário sobre saída</value>
+  </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>

@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="horario.exe.manifest" size="6716">
+    <dependentAssembly dependencyType="install" codebase="horario.exe.manifest" size="7399">
       <assemblyIdentity name="horario.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D/0OQ0lzGJRIvLN9WvvRlv58OTAEAIx6GF4IAbHMB2A=</dsig:DigestValue>
+        <dsig:DigestValue>Tl1KSdh8rgpJzkb0qcV4UFm5Npr7juKPWT9KRuzCpU8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace horario
@@ -39,33 +32,12 @@ namespace horario
 
                 try
                 {
-
-                Process[] proc  = Process.GetProcessesByName("horario");
-                proc[0].Kill();
-
-
-                }
-                catch(Exception)
-                {}
-
-            }
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                try
-                {
-                    TimeSpan hora = TimeSpan.Parse(maskedTextBox1.Text);
-                    StreamWriter gravarTXT = new StreamWriter(caminho);
-                    gravarTXT.Write("---" + hora + textBox1.Text);
-                    gravarTXT.Close();
-                    panel1.Visible = true;
+                    Process[] proc = Process.GetProcessesByName("horario");
+                    proc[0].Kill();
                 }
                 catch (Exception)
-                {
-                }
+                { }
+
             }
         }
 
@@ -109,7 +81,7 @@ namespace horario
                 writer.Write(txt_senha.Text);
                 writer.Close();
 
-                
+
                 block bl = new block();
                 bl.BloquearPasta(caminho);
 
@@ -121,6 +93,24 @@ namespace horario
             else
             {
                 MessageBox.Show("Senhas não conferem");
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    TimeSpan hora = TimeSpan.Parse(maskedTextBox1.Text);
+                    StreamWriter gravarTXT = new StreamWriter(caminho);
+                    gravarTXT.Write("---" + hora + textBox1.Text.PadRight(10, ' ') + textBox2.Text.PadRight(20, ' '));
+                    gravarTXT.Close();
+                    panel1.Visible = true;
+                }
+                catch (Exception)
+                {
+                }
             }
         }
     }

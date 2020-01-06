@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_excluir = new System.Windows.Forms.Button();
+            this.btn_limpar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_gravar
@@ -162,12 +164,34 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Descrição";
             // 
+            // btn_excluir
+            // 
+            this.btn_excluir.Location = new System.Drawing.Point(320, 97);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(69, 22);
+            this.btn_excluir.TabIndex = 12;
+            this.btn_excluir.Text = "Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.Location = new System.Drawing.Point(12, 70);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(100, 37);
+            this.btn_limpar.TabIndex = 13;
+            this.btn_limpar.Text = "Limpar campos";
+            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            // 
             // senhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(401, 527);
+            this.Controls.Add(this.btn_limpar);
+            this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -204,5 +228,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.Button btn_limpar;
     }
 }

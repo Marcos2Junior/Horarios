@@ -57,10 +57,20 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbl_titulo = new System.Windows.Forms.Label();
+            this.panel_cidade = new System.Windows.Forms.Panel();
+            this.btn_gravar_cidade = new System.Windows.Forms.Button();
+            this.btn_cancel_cidade = new System.Windows.Forms.Button();
+            this.txt_cidade = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.btn_alterar_dados = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel_cidade.SuspendLayout();
             this.SuspendLayout();
             // 
             // mtb1
@@ -183,13 +193,13 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(3, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 117);
+            this.panel1.Size = new System.Drawing.Size(296, 163);
             this.panel1.TabIndex = 12;
             this.panel1.Visible = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(218, 87);
+            this.button3.Location = new System.Drawing.Point(198, 127);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -200,12 +210,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 6);
+            this.label5.Location = new System.Drawing.Point(24, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(247, 52);
+            this.label5.Size = new System.Drawing.Size(263, 91);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Apenas use essa opção se não for realizar registro \r\ndos dois ultimos horarios.\r\n" +
-    "\r\nComentário sobre saída";
+            this.label5.Text = resources.GetString("label5.Text");
             // 
             // button2
             // 
@@ -219,7 +228,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 61);
+            this.textBox1.Location = new System.Drawing.Point(27, 101);
             this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 20);
@@ -347,11 +356,105 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "F2 Senhas";
             // 
+            // lbl_titulo
+            // 
+            this.lbl_titulo.AutoSize = true;
+            this.lbl_titulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo.Location = new System.Drawing.Point(12, 36);
+            this.lbl_titulo.Name = "lbl_titulo";
+            this.lbl_titulo.Size = new System.Drawing.Size(592, 18);
+            this.lbl_titulo.TabIndex = 16;
+            this.lbl_titulo.Text = "Bom dia Marcos, Previsão para hoje é Chuvas esparsas, Temperatura atual: 24°";
+            // 
+            // panel_cidade
+            // 
+            this.panel_cidade.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_cidade.Controls.Add(this.label11);
+            this.panel_cidade.Controls.Add(this.txt_nome);
+            this.panel_cidade.Controls.Add(this.label10);
+            this.panel_cidade.Controls.Add(this.txt_cidade);
+            this.panel_cidade.Controls.Add(this.btn_cancel_cidade);
+            this.panel_cidade.Controls.Add(this.btn_gravar_cidade);
+            this.panel_cidade.Location = new System.Drawing.Point(48, 84);
+            this.panel_cidade.Name = "panel_cidade";
+            this.panel_cidade.Size = new System.Drawing.Size(200, 139);
+            this.panel_cidade.TabIndex = 17;
+            this.panel_cidade.Visible = false;
+            // 
+            // btn_gravar_cidade
+            // 
+            this.btn_gravar_cidade.Location = new System.Drawing.Point(119, 105);
+            this.btn_gravar_cidade.Name = "btn_gravar_cidade";
+            this.btn_gravar_cidade.Size = new System.Drawing.Size(75, 23);
+            this.btn_gravar_cidade.TabIndex = 4;
+            this.btn_gravar_cidade.Text = "Gravar";
+            this.btn_gravar_cidade.UseVisualStyleBackColor = true;
+            this.btn_gravar_cidade.Click += new System.EventHandler(this.btn_gravar_cidade_Click);
+            // 
+            // btn_cancel_cidade
+            // 
+            this.btn_cancel_cidade.Location = new System.Drawing.Point(38, 105);
+            this.btn_cancel_cidade.Name = "btn_cancel_cidade";
+            this.btn_cancel_cidade.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancel_cidade.TabIndex = 5;
+            this.btn_cancel_cidade.Text = "Cancelar";
+            this.btn_cancel_cidade.UseVisualStyleBackColor = true;
+            this.btn_cancel_cidade.Click += new System.EventHandler(this.btn_cancel_cidade_Click);
+            // 
+            // txt_cidade
+            // 
+            this.txt_cidade.Location = new System.Drawing.Point(12, 25);
+            this.txt_cidade.MaxLength = 50;
+            this.txt_cidade.Name = "txt_cidade";
+            this.txt_cidade.Size = new System.Drawing.Size(162, 20);
+            this.txt_cidade.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Alterar cidade";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 54);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Alterar nome";
+            // 
+            // txt_nome
+            // 
+            this.txt_nome.Location = new System.Drawing.Point(12, 70);
+            this.txt_nome.MaxLength = 50;
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(162, 20);
+            this.txt_nome.TabIndex = 8;
+            // 
+            // btn_alterar_dados
+            // 
+            this.btn_alterar_dados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_alterar_dados.Location = new System.Drawing.Point(216, 261);
+            this.btn_alterar_dados.Name = "btn_alterar_dados";
+            this.btn_alterar_dados.Size = new System.Drawing.Size(83, 27);
+            this.btn_alterar_dados.TabIndex = 18;
+            this.btn_alterar_dados.Text = "Alterar dados";
+            this.btn_alterar_dados.UseVisualStyleBackColor = true;
+            this.btn_alterar_dados.Click += new System.EventHandler(this.btn_alterar_dados_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 323);
+            this.Controls.Add(this.btn_alterar_dados);
+            this.Controls.Add(this.panel_cidade);
+            this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
@@ -381,6 +484,8 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel_cidade.ResumeLayout(false);
+            this.panel_cidade.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,6 +520,15 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.Panel panel_cidade;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_cidade;
+        private System.Windows.Forms.Button btn_cancel_cidade;
+        private System.Windows.Forms.Button btn_gravar_cidade;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_nome;
+        private System.Windows.Forms.Button btn_alterar_dados;
     }
 }
 

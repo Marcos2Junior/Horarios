@@ -60,14 +60,63 @@ namespace horario
             }
         }
 
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Tem certeza de que deseja excluir essa senha? ", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                SenhaAdministrativa frmSenha = new SenhaAdministrativa();
+                frmSenha.ShowDialog();
+                if (frmSenha.verificacao)
+                {
+                    string senha = null;
+                    string descricao = null;
+
+                    senha = txt_senha.Text;
+                    descricao = rtb_descricao.Text;
+
+                    bl.DesBloquearPasta(caminho);
+                    if (!File.Exists(caminho + "\\arquivos.txt"))
+                    {
+                        FileStream a = File.Create(caminho + "\\arquivos.txt");
+                        a.Close();
+                    }
+
+                    string[] linhas = File.ReadAllLines(caminho + "\\arquivos.txt");
+                    StreamWriter gravarTXT = new StreamWriter(caminho + "\\arquivos.txt");
+
+                    foreach (var line in linhas)
+                    {
+                        if (line.Substring(0, 50) == txt_chave.Text.PadRight(50, ' '))
+                        {
+                            MessageBox.Show(txt_chave.Text + ", Excluido com sucesso");
+                        }
+                        else
+                            gravarTXT.WriteLine(line);
+                    }
+
+                    gravarTXT.Close();
+
+                    bl.DesBloquearPasta(caminho);
+
+                    txt_chave.Text = "";
+                    txt_confSenha.Text = "";
+                    txt_senha.Text = "";
+                    rtb_descricao.Text = "";
+                    CarregaComboBox();
+                }
+            }
+        }
+
         private void GravarSenha()
         {
             string senha = null;
             string descricao = null;
             Criptografar cripto = new Criptografar();
 
-            
-           senha = txt_senha.Text;
+
+            senha = txt_senha.Text;
             descricao = rtb_descricao.Text;
 
             bl.DesBloquearPasta(caminho);
@@ -86,7 +135,7 @@ namespace horario
             }
             foreach (var line in linhas)
             {
-                if (line.Substring(0, 50) == txt_chave.Text.PadLeft(50, ' '))
+                if (line.Substring(0, 50) == txt_chave.Text.PadRight(50, ' '))
                 {
                     gravarTXT.WriteLine(txt_chave.Text.PadRight(50, ' ') + senha.PadRight(70, ' ') + descricao.PadRight(220, ' '));
                     gravou = true;
@@ -122,18 +171,15 @@ namespace horario
                 if (line.Substring(0, 50) == chave.PadRight(50, ' '))
                 {
                     txt_chave.Text = line.Substring(0, 50).Trim();
-                  txt_senha.Text = line.Substring(50, 70).Trim();
-                   rtb_descricao.Text = line.Substring(120, 220).Trim();
+                    txt_senha.Text = line.Substring(50, 70).Trim();
+                    rtb_descricao.Text = line.Substring(120, 220).Trim();
                 }
             }
         }
         //ao selecionar, antes de exibir a senha exibir um painel solicitando senha mestre para visualizar qualquer outra senha..
         private void cb_chaves_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SenhaAdministrativa frm = new SenhaAdministrativa();
-            frm.ShowDialog();
-            if(frm.verificacao)
-                VisualizaSenha(cb_chaves.Text);
+            VisualizaSenha(cb_chaves.Text);
         }
 
         private void CarregaComboBox()
@@ -145,7 +191,7 @@ namespace horario
                 a.Close();
             }
             string[] linhas = File.ReadAllLines(caminho + "\\arquivos.txt");
-           
+
             bl.BloquearPasta(caminho);
 
             List<string> list = new List<string>();
@@ -154,7 +200,7 @@ namespace horario
                 list.Add(line.Substring(0, 50).Trim());
             }
             cb_chaves.DataSource = list;
-            
+
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)
@@ -175,8 +221,18 @@ namespace horario
             {
                 this.Hide();
                 Form1 frm = new Form1();
-                frm.ShowDialog();   
+                frm.ShowDialog();
             }
         }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            txt_chave.Text = "";
+            txt_confSenha.Text = "";
+            txt_senha.Text = "";
+            rtb_descricao.Text = "";
+        }
+
+        
     }
 }
