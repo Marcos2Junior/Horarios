@@ -42,6 +42,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_limpar = new System.Windows.Forms.Button();
+            this.btn_gerarSenha = new System.Windows.Forms.Button();
+            this.panel_gerarSenha = new System.Windows.Forms.Panel();
+            this.cb_maiusculas = new System.Windows.Forms.CheckBox();
+            this.cb_minusculas = new System.Windows.Forms.CheckBox();
+            this.cb_caracteres = new System.Windows.Forms.CheckBox();
+            this.cb_numeros = new System.Windows.Forms.CheckBox();
+            this.numeric_quantidade = new System.Windows.Forms.NumericUpDown();
+            this.lbl_quantidade = new System.Windows.Forms.Label();
+            this.btn_gerar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_cancelarGerarSenha = new System.Windows.Forms.Button();
+            this.panel_gerarSenha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_quantidade)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_gravar
@@ -57,7 +71,7 @@
             // txt_senha
             // 
             this.txt_senha.Location = new System.Drawing.Point(60, 213);
-            this.txt_senha.MaxLength = 50;
+            this.txt_senha.MaxLength = 40;
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.PasswordChar = '*';
             this.txt_senha.Size = new System.Drawing.Size(281, 20);
@@ -66,7 +80,7 @@
             // txt_confSenha
             // 
             this.txt_confSenha.Location = new System.Drawing.Point(60, 262);
-            this.txt_confSenha.MaxLength = 50;
+            this.txt_confSenha.MaxLength = 40;
             this.txt_confSenha.Name = "txt_confSenha";
             this.txt_confSenha.PasswordChar = '*';
             this.txt_confSenha.Size = new System.Drawing.Size(281, 20);
@@ -101,7 +115,7 @@
             // 
             // btn_visualizar
             // 
-            this.btn_visualizar.Location = new System.Drawing.Point(272, 185);
+            this.btn_visualizar.Location = new System.Drawing.Point(226, 185);
             this.btn_visualizar.Name = "btn_visualizar";
             this.btn_visualizar.Size = new System.Drawing.Size(69, 22);
             this.btn_visualizar.TabIndex = 5;
@@ -184,12 +198,151 @@
             this.btn_limpar.UseVisualStyleBackColor = true;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
+            // btn_gerarSenha
+            // 
+            this.btn_gerarSenha.Location = new System.Drawing.Point(301, 185);
+            this.btn_gerarSenha.Name = "btn_gerarSenha";
+            this.btn_gerarSenha.Size = new System.Drawing.Size(85, 22);
+            this.btn_gerarSenha.TabIndex = 14;
+            this.btn_gerarSenha.Text = "Gerar senha";
+            this.btn_gerarSenha.UseVisualStyleBackColor = true;
+            this.btn_gerarSenha.Click += new System.EventHandler(this.btn_gerarSenha_Click);
+            // 
+            // panel_gerarSenha
+            // 
+            this.panel_gerarSenha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_gerarSenha.Controls.Add(this.btn_cancelarGerarSenha);
+            this.panel_gerarSenha.Controls.Add(this.groupBox1);
+            this.panel_gerarSenha.Location = new System.Drawing.Point(2, 70);
+            this.panel_gerarSenha.Name = "panel_gerarSenha";
+            this.panel_gerarSenha.Size = new System.Drawing.Size(387, 445);
+            this.panel_gerarSenha.TabIndex = 15;
+            this.panel_gerarSenha.Visible = false;
+            // 
+            // cb_maiusculas
+            // 
+            this.cb_maiusculas.AutoSize = true;
+            this.cb_maiusculas.Checked = true;
+            this.cb_maiusculas.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_maiusculas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_maiusculas.Location = new System.Drawing.Point(49, 110);
+            this.cb_maiusculas.Name = "cb_maiusculas";
+            this.cb_maiusculas.Size = new System.Drawing.Size(210, 25);
+            this.cb_maiusculas.TabIndex = 1;
+            this.cb_maiusculas.Text = "Incluir letras maiusculas";
+            this.cb_maiusculas.UseVisualStyleBackColor = true;
+            // 
+            // cb_minusculas
+            // 
+            this.cb_minusculas.AutoSize = true;
+            this.cb_minusculas.Checked = true;
+            this.cb_minusculas.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_minusculas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_minusculas.Location = new System.Drawing.Point(49, 143);
+            this.cb_minusculas.Name = "cb_minusculas";
+            this.cb_minusculas.Size = new System.Drawing.Size(209, 25);
+            this.cb_minusculas.TabIndex = 2;
+            this.cb_minusculas.Text = "Incluir letras minusculas";
+            this.cb_minusculas.UseVisualStyleBackColor = true;
+            // 
+            // cb_caracteres
+            // 
+            this.cb_caracteres.AutoSize = true;
+            this.cb_caracteres.Checked = true;
+            this.cb_caracteres.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_caracteres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_caracteres.Location = new System.Drawing.Point(49, 174);
+            this.cb_caracteres.Name = "cb_caracteres";
+            this.cb_caracteres.Size = new System.Drawing.Size(238, 25);
+            this.cb_caracteres.TabIndex = 3;
+            this.cb_caracteres.Text = "Incluir caracteres especiais";
+            this.cb_caracteres.UseVisualStyleBackColor = true;
+            // 
+            // cb_numeros
+            // 
+            this.cb_numeros.AutoSize = true;
+            this.cb_numeros.Checked = true;
+            this.cb_numeros.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_numeros.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_numeros.Location = new System.Drawing.Point(49, 205);
+            this.cb_numeros.Name = "cb_numeros";
+            this.cb_numeros.Size = new System.Drawing.Size(145, 25);
+            this.cb_numeros.TabIndex = 4;
+            this.cb_numeros.Text = "Incluir numeros";
+            this.cb_numeros.UseVisualStyleBackColor = true;
+            // 
+            // numeric_quantidade
+            // 
+            this.numeric_quantidade.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeric_quantidade.Location = new System.Drawing.Point(52, 66);
+            this.numeric_quantidade.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.numeric_quantidade.Name = "numeric_quantidade";
+            this.numeric_quantidade.Size = new System.Drawing.Size(57, 27);
+            this.numeric_quantidade.TabIndex = 0;
+            // 
+            // lbl_quantidade
+            // 
+            this.lbl_quantidade.AutoSize = true;
+            this.lbl_quantidade.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quantidade.Location = new System.Drawing.Point(46, 39);
+            this.lbl_quantidade.Name = "lbl_quantidade";
+            this.lbl_quantidade.Size = new System.Drawing.Size(222, 21);
+            this.lbl_quantidade.TabIndex = 5;
+            this.lbl_quantidade.Text = "Quantidade de caracteres";
+            // 
+            // btn_gerar
+            // 
+            this.btn_gerar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_gerar.Location = new System.Drawing.Point(83, 236);
+            this.btn_gerar.Name = "btn_gerar";
+            this.btn_gerar.Size = new System.Drawing.Size(128, 48);
+            this.btn_gerar.TabIndex = 6;
+            this.btn_gerar.Text = "Gerar";
+            this.btn_gerar.UseVisualStyleBackColor = true;
+            this.btn_gerar.Click += new System.EventHandler(this.btn_gerar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbl_quantidade);
+            this.groupBox1.Controls.Add(this.btn_gerar);
+            this.groupBox1.Controls.Add(this.numeric_quantidade);
+            this.groupBox1.Controls.Add(this.cb_caracteres);
+            this.groupBox1.Controls.Add(this.cb_maiusculas);
+            this.groupBox1.Controls.Add(this.cb_minusculas);
+            this.groupBox1.Controls.Add(this.cb_numeros);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox1.Location = new System.Drawing.Point(37, 53);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(308, 300);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gerar nova senha";
+            // 
+            // btn_cancelarGerarSenha
+            // 
+            this.btn_cancelarGerarSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelarGerarSenha.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_cancelarGerarSenha.Location = new System.Drawing.Point(284, 404);
+            this.btn_cancelarGerarSenha.Name = "btn_cancelarGerarSenha";
+            this.btn_cancelarGerarSenha.Size = new System.Drawing.Size(96, 26);
+            this.btn_cancelarGerarSenha.TabIndex = 7;
+            this.btn_cancelarGerarSenha.Text = "Cancelar";
+            this.btn_cancelarGerarSenha.UseVisualStyleBackColor = true;
+            this.btn_cancelarGerarSenha.Click += new System.EventHandler(this.btn_cancelarGerarSenha_Click);
+            // 
             // senhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(401, 527);
+            this.Controls.Add(this.panel_gerarSenha);
+            this.Controls.Add(this.btn_gerarSenha);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.label5);
@@ -209,6 +362,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.senhas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.senhas_KeyDown);
+            this.panel_gerarSenha.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_quantidade)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +387,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_limpar;
+        private System.Windows.Forms.Button btn_gerarSenha;
+        private System.Windows.Forms.Panel panel_gerarSenha;
+        private System.Windows.Forms.Button btn_gerar;
+        private System.Windows.Forms.Label lbl_quantidade;
+        private System.Windows.Forms.NumericUpDown numeric_quantidade;
+        private System.Windows.Forms.CheckBox cb_numeros;
+        private System.Windows.Forms.CheckBox cb_caracteres;
+        private System.Windows.Forms.CheckBox cb_minusculas;
+        private System.Windows.Forms.CheckBox cb_maiusculas;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_cancelarGerarSenha;
     }
 }

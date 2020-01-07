@@ -26,7 +26,7 @@ namespace horario
         int contador = 10;
         WeatherInfo.RootObject result;
         bool inicioForm = false;
-
+        bool exceptionPrevisaoTempo = false; //Caso de algum erro com webservice previsao do tempo
         public Form1()
         {
             InitializeComponent();
@@ -38,8 +38,15 @@ namespace horario
             this.Location = new Point(workingArea.Right - Size.Width, workingArea.Bottom - Size.Height);
 
             PrevisaoTempo previsaoTempo = new PrevisaoTempo();
-            result = previsaoTempo.getWeather(cidade);
 
+            try
+            {
+                result = previsaoTempo.getWeather(cidade);
+            }
+            catch (Exception)
+            {
+                exceptionPrevisaoTempo = true;
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -111,7 +118,13 @@ namespace horario
                 lbl_titulo.Location = new Point(contador, 36);
             }
 
-            string previsao = ", Previsão para hoje é " + result.results.description + ", Temperatura atual: " + result.results.temp.ToString() + "°,  Cidade de " + cidade;
+            string previsao = null;
+
+            if (!exceptionPrevisaoTempo)
+                previsao = ", Previsão para hoje é " + result.results.description + ", Temperatura atual: " + result.results.temp.ToString() + "°,  Cidade de " + cidade;
+            else
+                previsao = ".";
+
 
             if (DateTime.Now > DateTime.Parse("11:59:00") && DateTime.Now < DateTime.Parse("18:00:00"))
             {

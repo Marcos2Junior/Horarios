@@ -239,6 +239,22 @@ namespace horario
             rtb_descricao.Text = "";
         }
 
-        
+        private void btn_gerar_Click(object sender, EventArgs e)
+        {
+            NewPass pass = new NewPass();
+            txt_senha.Text = pass.Gerar(int.Parse(numeric_quantidade.Value.ToString()), cb_caracteres.Checked, cb_maiusculas.Checked, cb_numeros.Checked, cb_minusculas.Checked);
+            txt_confSenha.Text = txt_senha.Text;
+            panel_gerarSenha.Visible = false;
+        }
+
+        private void btn_gerarSenha_Click(object sender, EventArgs e)
+        {
+            panel_gerarSenha.Visible = true;
+        }
+
+        private void btn_cancelarGerarSenha_Click(object sender, EventArgs e)
+        {
+            panel_gerarSenha.Visible = false;
+        }
     }
 }

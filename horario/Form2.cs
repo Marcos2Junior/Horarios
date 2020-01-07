@@ -83,7 +83,6 @@ namespace horario
                 writer.Write(cripto.Encrypt(txt_senha.Text));
                 writer.Close();
 
-
                 block bl = new block();
                 bl.BloquearPasta(caminho);
 

@@ -116,6 +116,7 @@
     <Compile Include="Lembrete.Designer.cs">
       <DependentUpon>Lembrete.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewPass.cs" />
     <Compile Include="PrevisaoTempo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
