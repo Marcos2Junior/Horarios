@@ -1,0 +1,22 @@
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\Controle Pessoal.exe.config
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\Controle Pessoal.exe.manifest
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\Controle Pessoal.application
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\Controle Pessoal.exe
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\Controle Pessoal.pdb
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\AudioSwitcher.AudioApi.CoreAudio.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\AudioSwitcher.AudioApi.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\itextsharp.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\MaterialSkin.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\bin\Debug\itextsharp.xml
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.Form1.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.Form2.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.Lembrete.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.Properties.Resources.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.SenhaAdministrativa.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.senhas.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.csproj.GenerateResource.Cache
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\Controle Pessoal.exe.manifest
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\Controle Pessoal.application
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\Controle Pessoal.exe
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\Controle Pessoal.pdb
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\ControlePessoal\ControlePessoal\obj\Debug\ControlePessoal.csprojResolveAssemblyReference.cache

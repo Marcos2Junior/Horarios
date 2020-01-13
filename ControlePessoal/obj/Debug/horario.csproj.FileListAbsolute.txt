@@ -1,0 +1,44 @@
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\horario.exe.config
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\horario.exe
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\horario.pdb
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\MaterialSkin.dll
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.Form1.resources
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.Properties.Resources.resources
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.csproj.GenerateResource.Cache
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.exe
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.pdb
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.Form2.resources
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\horario.exe.manifest
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\horario.application
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.exe.manifest
+c:\users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.application
+C:\Users\marcos.junior\Documents\Visual Studio 2012\Projects\horario\horario\bin\Debug\itextsharp.dll
+C:\Users\marcos.junior\Documents\Visual Studio 2012\Projects\horario\horario\bin\Debug\itextsharp.xml
+C:\Users\marcos.junior\Documents\Visual Studio 2012\Projects\horario\horario\obj\Debug\horario.senhas.resources
+C:\Users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\AudioSwitcher.AudioApi.CoreAudio.dll
+C:\Users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\bin\Debug\AudioSwitcher.AudioApi.dll
+C:\Users\marcos.junior\documents\visual studio 2012\Projects\horario\horario\obj\Debug\horario.Lembrete.resources
+C:\Users\marcos.junior\Documents\Visual Studio 2012\Projects\horario\horario\obj\Debug\horario.SenhaAdministrativa.resources
+C:\Users\marcos.junior\Documents\Visual Studio 2012\Projects\horario\horario\obj\Debug\horario.csprojResolveAssemblyReference.cache
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\horario.exe.config
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.exe
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.pdb
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\horario.exe.manifest
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\horario.application
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\horario.exe
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\horario.pdb
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\AudioSwitcher.AudioApi.CoreAudio.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\AudioSwitcher.AudioApi.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\itextsharp.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\MaterialSkin.dll
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\bin\Debug\itextsharp.xml
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.csprojResolveAssemblyReference.cache
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.Form1.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.Form2.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.Lembrete.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.Properties.Resources.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.SenhaAdministrativa.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.senhas.resources
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.csproj.GenerateResource.Cache
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.exe.manifest
+C:\Users\marcos.junior\OneDrive - Fatec Centro Paula Souza\horario\horario\obj\Debug\horario.application
