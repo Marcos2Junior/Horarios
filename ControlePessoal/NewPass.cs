@@ -18,7 +18,7 @@ namespace ControlePessoal
             string result = "";
 
             Random r = new Random();
-
+            
             for (int i = 0; i < quantidade; i++)
             {
                 if (caracteresEspeciais && result.Length < quantidade)
@@ -35,6 +35,14 @@ namespace ControlePessoal
 
                 if (result.Length == quantidade)
                     break;
+            }
+
+            string aux = result;
+            result = null;
+
+            for(int i = 0; i < quantidade; i++)
+            {
+                result+= aux[r.Next(aux.Length)];
             }
 
             return result;

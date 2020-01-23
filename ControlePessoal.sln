@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "horario", "horario\horario.csproj", "{C021D97D-9B83-4C89-ACA8-4489A8233C86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlePessoal", "ControlePessoal\ControlePessoal.csproj", "{C021D97D-9B83-4C89-ACA8-4489A8233C86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

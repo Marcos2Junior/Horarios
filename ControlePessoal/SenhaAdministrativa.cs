@@ -11,6 +11,7 @@ namespace ControlePessoal
         public string senha;
         int contSenha = 0;
         string senhaNova = null;
+        bool alterouSenha = false;
 
         public bool verificacao;
 
@@ -73,6 +74,7 @@ namespace ControlePessoal
                     label1.Text = "Insira sua senha";
                     senhaNova = null;
                     label4.Visible = true;
+                    alterouSenha = true;
                 }
                 else
                 {
@@ -87,6 +89,7 @@ namespace ControlePessoal
 
         private void btn_pronto_Click(object sender, EventArgs e)
         {
+            alterouSenha = false;
             block bl = new block();
             bl.DesBloquearPasta(caminho);
 
@@ -119,7 +122,10 @@ namespace ControlePessoal
                     {
                         bl.BloquearPasta(caminho);
                         verificacao = false;
-                        label2.Visible = true;
+
+                        if(!alterouSenha) //Caso tenha alterado senha, não exibe label de erro
+                            label2.Visible = true;
+
                         contSenha = 0;
                         label1.Text = "Insira sua senha";
                         label4.Visible = true;
@@ -152,7 +158,7 @@ namespace ControlePessoal
             if (e.KeyCode == Keys.F1 && contSenha == 0)
             {
                 MessageBox.Show("Alterando sua senha administrativa, esteja ciente de que todas suas senhas armazenadas não será mais possivel visualiza-las. Pois, a criptografia utilizada pelo sistema"
-                    + " grava todas as infromações com base na sua senha administrativa, sendo APENAS possivel descriptografar utilizando essa mesma senha.\n"
+                    + " grava todas as informações com base na sua senha administrativa, sendo APENAS possivel descriptografar utilizando essa mesma senha.\n"
                     + "\nCaso voce decida alterar sua senha, e ainda exista senhas armazenadas, elas continuarão armazenadas, mas voce só irá conseguir visualiza-las caso altere sua senha novamente para a "
                     + "mesma senha em que ela foi criptografada inicialmente."
                     + "\n\nSugerimos que voce armazene manualmente em um outro local todas suas senhas para depois regrava-las no sistema.", "AVISO IMPORTANTE!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
